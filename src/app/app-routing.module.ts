@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'cocktails/cocktail',
     loadChildren: () => import('./cocktails/cocktail/cocktail.module').then( m => m.CocktailPageModule)
+  },
+  {
+    path: 'functions/add',
+    loadChildren: () => import('./functions/add/add.module').then( m => m.AddPageModule)
   }
 ];
 
@@ -27,4 +31,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}

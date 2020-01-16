@@ -13,6 +13,9 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 $RECYCLE.BIN/
 
+config.xml
+capacitor.config.json
+
 *.log
 log.txt
 npm-debug.log*
@@ -29,3 +32,6 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+/android
+/.gradle
+/resources

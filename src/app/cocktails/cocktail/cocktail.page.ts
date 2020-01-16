@@ -56,8 +56,6 @@ export class CocktailPage implements OnInit {
     };
     this.average = this.getAverageRating(this.cocktail.reviews);
     this.stars = this.calculateStars(this.average);
-
-
    }
 
   ngOnInit() {
