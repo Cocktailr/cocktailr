@@ -45,7 +45,7 @@ export class CocktailsService {
 
   //gets a list of all Cocktails with a ingredient
   getCocktailsFromCategory() {
-
+    
   }
 
   //search Cocktail 

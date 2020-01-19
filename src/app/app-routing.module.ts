@@ -22,6 +22,14 @@ const routes: Routes = [
   {
     path: 'functions/add',
     loadChildren: () => import('./functions/add/add.module').then( m => m.AddPageModule)
+  },
+  {
+    path: 'update',
+    loadChildren: () => import('./functions/update/update.module').then( m => m.UpdatePageModule)
+  },
+  {
+    path: 'delete',
+    loadChildren: () => import('./functions/delete/delete.module').then( m => m.DeletePageModule)
   }
 ];
 

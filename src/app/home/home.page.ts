@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CocktailsService } from "src/app/services/cocktails.service";
+import { Cocktail } from '../classes/cocktail';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  cocktails : Array<any>;
+
+  constructor(private cocktailService: CocktailsService) {
+    this.cocktailService.getNewestCocktails()
+    .then(result => {
+      this.cocktails = result;
+    })
+  }
+
 
 }

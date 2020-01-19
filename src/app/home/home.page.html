@@ -21,15 +21,15 @@
       </ion-col>
     </ion-row>
     <ion-row class="ion-no-padding">
-      <ion-col size-xs="6" size-sm="3" size="3" class="ion-no-padding">
+      <ion-col size-xs="6" size-sm="3" size="3" class="ion-no-padding" *ngFor="let cocktail of cocktails">
         <ion-card button routerLink="/cocktails/cocktail">
-          <img src="https://bakingamoment.com/wp-content/uploads/2019/08/IMG_5823-moscow-mule.jpg" />
+          <ion-img [src]="cocktail.payload.doc.data().imgUrl"></ion-img>
           <ion-card-header>
             <ion-card-subtitle>Vodka</ion-card-subtitle>
-            <ion-card-title>Moscow Mule</ion-card-title>
+            <ion-card-title>{{cocktail.payload.doc.data().name}}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            The Iconic Drink from the Kremlin
+            {{cocktail.payload.doc.data().description}}
           </ion-card-content>
         </ion-card>
       </ion-col>

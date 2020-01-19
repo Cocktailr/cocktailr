@@ -4,7 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { ProductsService } from "src/app/services/products.service";
+//import { ProductsService } from "src/app/services/products.service";
 
 @Component({
   selector: 'app-root',
@@ -36,10 +36,10 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private productsService, ProductsService
+    //private productsService: ProductsService
   ) {
     this.initializeApp();
-    this.getCategories();
+    //this.getCategories();
   }
 
   initializeApp() {
@@ -49,7 +49,7 @@ export class AppComponent {
     });
   }
 
-  getCategories() {
+ /* getCategories() {
     this.productsService.getProducts()
     .subscribe(result => {
       this.products = result;
@@ -59,6 +59,6 @@ export class AppComponent {
 
   setProductsToPages(appPages) {
 
-  }
+  }*/
 
 }
