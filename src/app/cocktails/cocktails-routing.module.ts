@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'cocktail',
     loadChildren: () => import('./cocktail/cocktail.module').then( m => m.CocktailPageModule)
+  },
+  {
+    path: 'cocktails-from-product',
+    loadChildren: () => import('./cocktails-from-product/cocktails-from-product.module').then( m => m.CocktailsFromProductPageModule)
   }
 ];
 

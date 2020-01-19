@@ -5,6 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cocktails.page.html',
   styleUrls: ['./cocktails.page.scss'],
 })
+
+/**
+ * You should can filter inside this components
+ */
 export class CocktailsPage implements OnInit {
 
   constructor() { }

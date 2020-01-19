@@ -20,20 +20,26 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" required [(ngModel)]="name">
+        <ion-item>
+          <ion-label position="stacked" for="name">Name</ion-label>
+          <ion-input type="text" id="name" required [(ngModel)]="name"></ion-input>
+        </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>  
-        <label for="imgUrl">Image URL</label>
-        <input type="text" class="form-control" id="imgUrl" [(ngModel)]="imgUrl">
+        <ion-item>
+          <ion-label position="stacked" for="imgUrl">Image</ion-label>
+          <ion-input type="text" id="imgUrl" [(ngModel)]="imgUrl"></ion-input>
+        </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>  
-        <label for="description">Description</label>
-        <textarea class="form-control" id="description" [(ngModel)]="description"></textarea>
+        <ion-item>
+          <ion-label position="stacked" for="description">Description</ion-label>
+          <ion-textarea id="description" [(ngModel)]="description"></ion-textarea>
+        </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>

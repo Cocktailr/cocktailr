@@ -16,19 +16,23 @@ const routes: Routes = [
     loadChildren: () => import('./cocktails/cocktails.module').then( m => m.CocktailsPageModule)
   },
   {
-    path: 'cocktails/cocktail',
+    path: 'cocktails/:id',
     loadChildren: () => import('./cocktails/cocktail/cocktail.module').then( m => m.CocktailPageModule)
+  },
+  {
+    path: 'cocktails/:productName',
+    loadChildren: () => import('./cocktails/cocktails-from-product/cocktails-from-product.module').then( m => m.CocktailsFromProductPageModule)
   },
   {
     path: 'functions/add',
     loadChildren: () => import('./functions/add/add.module').then( m => m.AddPageModule)
   },
   {
-    path: 'update',
+    path: 'functions/update',
     loadChildren: () => import('./functions/update/update.module').then( m => m.UpdatePageModule)
   },
   {
-    path: 'delete',
+    path: 'functions/delete',
     loadChildren: () => import('./functions/delete/delete.module').then( m => m.DeletePageModule)
   }
 ];
