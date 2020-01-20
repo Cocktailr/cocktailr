@@ -21,14 +21,19 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'All Cocktails',
-      url: '/cocktails',
-      icon: 'wine'
-    },
-    {
       title: 'Add Cocktail',
       url: '/functions/add',
       icon: 'add'
+    },
+    {
+      title: 'Delete Cocktail',
+      url: '/functions/delete',
+      icon: 'remove'
+    },
+    {
+      title: 'Update Cocktail',
+      url: '/functions/update',
+      icon: 'refresh'
     }
   ];
 

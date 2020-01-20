@@ -11,3 +11,13 @@ export class Cocktail {
     ) {}
 
 }
+
+export interface ICocktail {
+    name: string,
+    imgUrl: string,
+    description: string,
+    creator?: Object,
+    ingredients?: Array<Object>,
+    steps?: Array<Object>,
+    reviews?: Array<Object>
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CocktailsService } from 'src/app/services/cocktails.service';
+import { CameraService } from 'src/app/services/camera.service'
 import { Cocktail } from "src/app/classes/cocktail";
 
 @Component({
@@ -13,7 +14,8 @@ export class AddPage implements OnInit {
   private imgUrl;
   private description;
 
-  constructor(private cocktailsService: CocktailsService) { }
+  constructor(private cocktailsService: CocktailsService) {
+   }
 
   ngOnInit() {
     
@@ -24,13 +26,13 @@ export class AddPage implements OnInit {
     this.cocktailsService.createCocktail(cocktail)
     .then(
       res => {
-        return "Successfully created Cocktail";
+        document.getElementById("response").innerHTML =  "<h4>Successfully created Cocktail</h4>";
+      },
+      err => {
+        document.getElementById("response").innerHTML =  "<h4>Couldn't create Cocktail</h4>";
+        console.log(err);
       }
     )
-  }
-
-  takePhoto() {
-    this.cocktailsService.takePhoto();
   }
 
 }

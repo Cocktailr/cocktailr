@@ -22,10 +22,9 @@
     </ion-row>
     <ion-row class="ion-no-padding">
       <ion-col size-xs="6" size-sm="3" size="3" class="ion-no-padding" *ngFor="let cocktail of cocktails">
-        <ion-card button routerLink="/cocktails/cocktail">
+        <ion-card button routerLink="/cocktails/{{cocktail.payload.doc.id}}">
           <ion-img [src]="cocktail.payload.doc.data().imgUrl"></ion-img>
           <ion-card-header>
-            <ion-card-subtitle>Vodka</ion-card-subtitle>
             <ion-card-title>{{cocktail.payload.doc.data().name}}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
@@ -33,91 +32,12 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
-      <ion-col size-xs="6" size-sm="3" size="3" class="ion-no-padding">
-        <ion-card button routerLink="/cocktails/cocktail">
-          <img src="https://bakingamoment.com/wp-content/uploads/2019/08/IMG_5823-moscow-mule.jpg" />
-          <ion-card-header>
-            <ion-card-subtitle>Vodka</ion-card-subtitle>
-            <ion-card-title>Moscow Mule</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            The Iconic Drink from the Kremlin
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size-xs="6" size-sm="3" size="3" class="ion-no-padding">
-        <ion-card button routerLink="/cocktails/cocktail">
-          <img src="https://bakingamoment.com/wp-content/uploads/2019/08/IMG_5823-moscow-mule.jpg" />
-          <ion-card-header>
-            <ion-card-subtitle>Vodka</ion-card-subtitle>
-            <ion-card-title>Moscow Mule</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            The Iconic Drink from the Kremlin
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size-xs="6" size-sm="3" size="3" class="ion-no-padding">
-        <ion-card button routerLink="/cocktails/cocktail">
-          <img src="https://bakingamoment.com/wp-content/uploads/2019/08/IMG_5823-moscow-mule.jpg" />
-          <ion-card-header>
-            <ion-card-subtitle>Vodka</ion-card-subtitle>
-            <ion-card-title>Moscow Mule</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            The Iconic Drink from the Kremlin
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-no-padding">
-      <ion-col class="ion-no-padding">
-        <ion-item lines="none">
-          <ion-text>
-            <h2>Categories</h2>
-          </ion-text>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-no-padding">
-      <ion-col size="6" class="ion-no-padding">
-        <ion-card button>
-          <img src="https://images2.alphacoders.com/491/491498.jpg" />
-          <ion-card-header>
-            <ion-card-title>Vodka</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding">
-        <ion-card button>
-          <img src="https://images2.alphacoders.com/491/491498.jpg" />
-          <ion-card-header>
-            <ion-card-title>Vodka</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding">
-        <ion-card button>
-          <img src="https://images2.alphacoders.com/491/491498.jpg" />
-          <ion-card-header>
-            <ion-card-title>Vodka</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding">
-        <ion-card button>
-          <img src="https://images2.alphacoders.com/491/491498.jpg" />
-          <ion-card-header>
-            <ion-card-title>Vodka</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
     </ion-row>
     <ion-row>
       <ion-col class="ion-no-padding">
         <ion-item color="dark" lines="none">
           <ion-text>
-            <h6>© cocktailr.io</h6>
+            <h6>created by Alexander Stöckl</h6>
           </ion-text>
         </ion-item>
       </ion-col>

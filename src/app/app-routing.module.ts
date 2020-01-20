@@ -11,17 +11,10 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
-  {
-    path: 'cocktails',
-    loadChildren: () => import('./cocktails/cocktails.module').then( m => m.CocktailsPageModule)
-  },
+
   {
     path: 'cocktails/:id',
     loadChildren: () => import('./cocktails/cocktail/cocktail.module').then( m => m.CocktailPageModule)
-  },
-  {
-    path: 'cocktails/:productName',
-    loadChildren: () => import('./cocktails/cocktails-from-product/cocktails-from-product.module').then( m => m.CocktailsFromProductPageModule)
   },
   {
     path: 'functions/add',

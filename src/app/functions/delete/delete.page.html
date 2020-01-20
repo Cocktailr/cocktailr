@@ -5,5 +5,31 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          <h1>Delete New Cocktail</h1>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked" for="id">Id To Delete</ion-label>
+          <ion-input type="text" id="id" required [(ngModel)]="id"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col id="response">
+      
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>  
+        <ion-button (click)="delete()">Delete</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

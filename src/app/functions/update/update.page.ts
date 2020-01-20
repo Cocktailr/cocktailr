@@ -9,6 +9,7 @@ import { Cocktail } from "src/app/classes/cocktail";
 })
 export class UpdatePage implements OnInit {
 
+  private id;
   private name;
   private imgUrl;
   private description;
@@ -18,12 +19,16 @@ export class UpdatePage implements OnInit {
   ngOnInit() {
   }
 
-  updateCocktail() {
+  update() {
     let cocktail = new Cocktail(this.name, this.imgUrl, this.description);
-    this.cocktailsService.createCocktail(cocktail)
+    this.cocktailsService.updateCocktail(this.id, cocktail)
     .then(
       res => {
-        return "Successfully updated Cocktail";
+        document.getElementById("response").innerHTML =  "<h4>Successfully updated Cocktail</h4>";
+      },
+      err => {
+        document.getElementById("response").innerHTML =  "<h4>Couldn't update Cocktail</h4>";
+        console.log(err);
       }
     )
   }

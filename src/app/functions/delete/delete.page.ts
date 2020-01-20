@@ -10,7 +10,7 @@ import { Cocktail } from 'src/app/classes/cocktail';
 })
 export class DeletePage implements OnInit {
 
-  cocktail: Cocktail;
+  private id;
 
   constructor(private cocktailService: CocktailsService) { }
 
@@ -18,12 +18,13 @@ export class DeletePage implements OnInit {
   }
 
   delete(){
-    this.cocktailService.deleteCocktails(this.cocktail)
+    this.cocktailService.deleteCocktail(this.id)
     .then(
       res => {
-        return "Successfuly deleted Cocktail";
+        document.getElementById("response").innerHTML =  "<h4>Successfully deleted Cocktail</h4>";
       },
       err => {
+        document.getElementById("response").innerHTML =  "<h4>Couldn't delete Cocktail</h4>";
         console.log(err);
       }
     )

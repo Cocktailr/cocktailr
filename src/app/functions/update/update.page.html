@@ -1,9 +1,64 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>update</ion-title>
+    <ion-title>Update Cocktail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          <h1>Update Cocktail</h1>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked" for="id">Id</ion-label>
+          <ion-input type="text" id="id" required [(ngModel)]="id"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked" for="name">Name</ion-label>
+          <ion-input type="text" id="name" required [(ngModel)]="name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>  
+        <ion-item>
+          <ion-label position="stacked" for="imgUrl">Image</ion-label>
+          <ion-input type="text" id="imgUrl" [(ngModel)]="imgUrl"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>  
+        <ion-item>
+          <ion-label position="stacked" for="description">Description</ion-label>
+          <ion-textarea id="description" [(ngModel)]="description"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col id="response">
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>  
+        <ion-button (click)="update()">Update</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

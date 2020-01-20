@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header *ngIf="cocktail">
   <ion-toolbar>
     <ion-title>{{cocktail.name}}</ion-title>
     <ion-buttons slot="start">
@@ -8,61 +8,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="cocktail">
   <ion-grid class="ion-no-padding">
     <ion-row class="ion-no-padding">
       <ion-col>
         <ion-card>
           <img src="{{cocktail.imgUrl}}" />
           <ion-card-header>
-            <ion-card-subtitle>
-              <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon> created by {{cocktail.creator.name}}</ion-card-subtitle>
+            <ion-card-subtitle></ion-card-subtitle>
             <ion-card-title>{{cocktail.name}}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-grid class="ion-no-padding">
-              <ion-row class="ion-no-padding">
-                <ion-col size="12" class="ion-no-padding ion-margin-top">
-                  {{cocktail.description}}
-                </ion-col>
-                <ion-col size="12" class="ion-no-padding ion-margin-top">
-                  <ion-item class="ion-no-padding">
-                    <ion-label>Ingredients</ion-label>
-                    <ion-badge *ngFor="let ingredient of cocktail.ingredients">{{ingredient.name}}</ion-badge>
-                  </ion-item>
-                </ion-col>
-                <ion-col size="12" class="ion-no-padding ion-margin-top">
-                  <ion-item class="ion-no-padding">
-                    <ion-text class="text-dark">
-                      <h1>Steps</h1>
-                    </ion-text>
-                  </ion-item>
-                  <ion-item *ngFor="let step of cocktail.steps" class="ion-no-padding">
-                    <ion-label class="ion-text-wrap">
-                      <ion-text color="dark">
-                        <h3>Step {{step.nr}}</h3>
-                      </ion-text>
-                      <p>{{step.description}}</p>
-                    </ion-label>
-                  </ion-item>
-                </ion-col>
-                <ion-col size="12" class="ion-no-padding ion-margin-top">
-                  <ion-item class="ion-no-padding">
-                    <ion-text class="text-dark">
-                      <h1>Reviews</h1>
-                    </ion-text>
-                  </ion-item>
-                  <ion-item *ngFor="let review of cocktail.reviews" class="ion-no-padding">
-                    <ion-label class="ion-text-wrap">
-                      <ion-text color="dark">
-                        <h3>{{review.name}} - {{review.rating}}</h3>
-                      </ion-text>
-                      <p>{{review.comment}}</p>
-                    </ion-label>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+            {{cocktail.description}}
           </ion-card-content>
         </ion-card>
       </ion-col>

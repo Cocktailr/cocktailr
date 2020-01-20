@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { CameraService } from 'src/app/services/camera.service';
 import { Cocktail } from '../classes/cocktail';
+import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,6 @@ export class CocktailsService {
 
   constructor(private db: AngularFirestore, private afs: AngularFireStorage, private cameraService: CameraService) {
 
-  }
-
-  takePhoto() {
-    let image = this.cameraService.takePhoto();
-    this.afs.ref("cocktail").putString(image, "data_url");
   }
 
 
@@ -36,7 +32,16 @@ export class CocktailsService {
   //get The newest Cocktails for Homepage
   getNewestCocktails() {
     return new Promise<any>((resolve, reject) => {
-      this.db.collection('/cocktails').snapshotChanges()
+      this.db.collection('cocktails').snapshotChanges()
+      .subscribe(snapshots => {
+        resolve(snapshots)
+      })
+    })
+  }
+
+  getCocktail(cocktailKey) {
+    return new Promise<any>((resolve, reject) => {
+      this.db.collection('cocktails').doc(cocktailKey).snapshotChanges()
       .subscribe(snapshots => {
         resolve(snapshots)
       })
@@ -56,16 +61,17 @@ export class CocktailsService {
   }
 
   //updateCocktail
-  updateCocktail(cocktailKey, cocktail: Cocktail) {
-    return this.db.collection('cocktails').doc(cocktailKey).set(cocktail);
+  updateCocktail(cocktailKey, cocktail) {
+    return this.db.collection('cocktails').doc(cocktailKey).update({
+      name: cocktail.name,  
+      imgUrl: cocktail.imgUrl,
+      description: cocktail.description
+    });
   }
 
 
   //deletes a Cocktail
-  deleteCocktails(cocktailKey) {
+  deleteCocktail(cocktailKey) {
     return this.db.collection('cocktails').doc(cocktailKey).delete();
   }
-
-  
-  
 }
