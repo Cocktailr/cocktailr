@@ -9,10 +9,10 @@ import { Cocktail } from "src/app/classes/cocktail";
 })
 export class UpdatePage implements OnInit {
 
-  private id;
-  private name;
-  private imgUrl;
-  private description;
+  public id;
+  public name;
+  public imgUrl;
+  public description;
 
   constructor(private cocktailsService: CocktailsService) { }
 

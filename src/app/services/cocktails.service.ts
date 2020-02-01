@@ -63,12 +63,11 @@ export class CocktailsService {
   //updateCocktail
   updateCocktail(cocktailKey, cocktail) {
     return this.db.collection('cocktails').doc(cocktailKey).update({
-      name: cocktail.name,  
+      name: cocktail.name,
       imgUrl: cocktail.imgUrl,
       description: cocktail.description
     });
   }
-
 
   //deletes a Cocktail
   deleteCocktail(cocktailKey) {

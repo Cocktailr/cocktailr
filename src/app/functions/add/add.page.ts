@@ -10,9 +10,9 @@ import { Cocktail } from "src/app/classes/cocktail";
 })
 export class AddPage implements OnInit {
 
-  private name;
-  private imgUrl;
-  private description;
+  public name;
+  public imgUrl;
+  public description;
 
   constructor(private cocktailsService: CocktailsService) {
    }

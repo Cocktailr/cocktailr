@@ -10,7 +10,7 @@ import { Cocktail } from 'src/app/classes/cocktail';
 })
 export class DeletePage implements OnInit {
 
-  private id;
+  public id;
 
   constructor(private cocktailService: CocktailsService) { }
 
